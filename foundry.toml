@@ -1,0 +1,45 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+optimizer = true
+optimizer_runs = 200
+chain_id = 8453
+via_ir = true
+solc_version = "0.8.22"
+sender = "0xB4bA57B82a6A5c85CF5C2428384EC97747735cd3"
+
+
+[profile.testnet]
+chain_id = 84532
+optimiser = true
+optimizer_runs = 50
+via_ir = true
+
+remappings = [
+    "ds-test/=lib/forge-std/lib/ds-test/src/",
+    "forge-std/=lib/forge-std/src/",
+    "solady/=lib/solady/src/",
+    "solmate/=lib/solmate/src/",
+    "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+    "murky/=lib/murky/",
+    "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+    "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+]
+
+
+[rpc_endpoints]
+optimism = "https://optimism-mainnet.infura.io/v3/${INFURA_KEY}"
+optimism_sepolia = "https://optimism-sepolia.infura.io/v3/${INFURA_KEY}"
+optimism_goerli = "${OPTIMISM_GOERLI_RPC}"
+base_sepolia = "${BASE_SEPOLIA_RPC}"
+base = "${BASE_MAINNET_RPC}"
+
+[etherscan]
+optimism = { key = "${ETHERSCAN_KEY_OP}", chain = "optimism", url = "https://optimistic.etherscan.io/" }
+optimism_goerli = { key = "${ETHERSCAN_KEY_OP}", chain = 420, url = "https://goerli-optimism.etherscan.io/" }
+optimism_sepolia = { key = "${ETHERSCAN_KEY_OP}", chain = 11155420, url = "https://api-sepolia-optimistic.etherscan.io/api" }
+base = { key = "${ETHERSCAN_KEY_BASE}", chain = 8453, url = "https://api.basescan.org/api" }
+base_sepolia = { key = "${ETHERSCAN_KEY_BASE}", chain = 84532, url = "https://api-sepolia.basescan.org/api" }

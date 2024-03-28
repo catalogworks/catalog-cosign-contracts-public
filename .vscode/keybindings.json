@@ -1,0 +1,7 @@
+[
+    {
+        "key": "CMD+h",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Generate Header"
+    }
+]
